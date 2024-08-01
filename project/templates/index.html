@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlift Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deadlift Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="playerId">Player ID:</label>
+            <input type="text" id="playerId" name="playerId" required>
+            
+            <label for="Sex">Sex:</label>
+            <input type="text" id="Sex" name="Sex" required>
+            
+            <label for="Equipment">Equipment:</label>
+            <input type="text" id="Equipment" name="Equipment" required>
+            
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" required>
+            
+            <label for="BodyweightKg">Body Weight (Kg):</label>
+            <input type="text" id="BodyweightKg" name="BodyweightKg" required>
+            
+            <label for="BestSquatKg">Best Squat (Kg):</label>
+            <input type="text" id="BestSquatKg" name="BestSquatKg" required>
+            
+            <label for="BestBenchKg">Best Bench (Kg):</label>
+            <input type="text" id="BestBenchKg" name="BestBenchKg" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
